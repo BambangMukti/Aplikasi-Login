@@ -4,30 +4,74 @@
  * Gunakan fungsi goToLogin() untuk menampilkan halaman login
  * Gunakan fungsi showPopUp() untuk menampilkan pop up error
  */
-/* Membuat variabel untuk setiap elemen view */
+
+/** @module Login-Script */
+
+/**
+
+* Membuat variabel loginFormElement untuk tampilan form
+* @constant {HTMLElement}
+*/
 const loginFormElement = document.querySelector('#loginForm');
+
+/**
+* Membuat variabel inputEmailElement untuk tampiulan inpau email.
+* @contant {HTMLElement}
+*/
 const inputEmailElement = document.querySelector('#inputEmail');
+
+/**
+*Membuata variabel inputPasswordElement untuk tampilan input password.
+* @constant {HTMLElement}
+*/
+
 const inputPasswordElement = document.querySelector('#inputPassword');
 
-/* membuat variabel untuk menyimpan informasi emeil dan pssword */
+/**
+* Membuat variabel expextedEmail untuk enyimpan informasi emeil sementara
+*@constant {string}
+*/
+
+
 const expectedEmail = 'admin@dicoding.com';
+
+/**
+* Membuat variabel expectedPassword untuk menyimpan informasi password sementara.
+* @constant {string}
+*/
 const expectedPassword = 'superpassword';
+
 
 /* menambahkan aksi klik pada button */
 loginFormElement.addEventListener('submit', function(event) {
   event.preventDefault();
 
+  /**
+  * Membuat variabel email untuk menyimpan nilai email yg didapatkan saat button ditekan.
+  * @constant {string}
+  */
+  
   /* comment: memdapatkan nilai dari masing masing input (email dan password) ketika tombol di klik */
+  
   const email = inputEmailElement.value;
+
+  /**
+  * Membuat variabel password untuk menyimpan nilai password yg didapatkan saat button ditekan.
+  * @constant {string}
+  */
   const password = inputPasswordElement.value;
 
   /* memastikan bahwa nilai email dan password sesuai dengan nilai tersimpan */
+  
   if (email == expectedEmail && password == expectedPassword) {
 
     /* jika sesuai halaman berpindah ke halaman Home */
     goToHome();
+    
   } else {
-    ?* jika tidak, akan menempilkan informasi input salah */
+    
+    /* jika tidak, akan menempilkan informasi input salah */
+    
     showPopUp();
   }
 });
